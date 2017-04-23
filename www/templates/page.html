@@ -1,18 +1,40 @@
 <ion-view title="Page" id="page1">
-  <ion-content padding="true" class="has-header">
+ 
+  <ion-content padding="true" class="has-header" ng-init="clear()" >
+ 
+                     <div class="list list-inset">
+                        <label class="item item-input">
+                            <i class="icon ion-search placeholder-icon"></i>
+                            <input type="text" name="search" ng-model="search"  placeholder="Search">
+                            <p></p>
+                        </label>
+                    </div> 
 
-    
 
-    <h1 id="page-heading1" style="color:#000000;">Road Signs App</h1>
 
-    <a ui-sref="page2" id="page-button6" class="button button-positive  button-block">පොලිස් නිලධාරීන්ගේ හස්ත සංඥා</a>
-    <a ui-sref="page3" id="page-button1" class="button button-positive  button-block">අනතුරැ හැගවීමේ සංඥා</a>
-    <a ui-sref="page4" id="page-button2" class="button button-positive  button-block">තහනම් සංඥා</a>
-    <a ui-sref="page5" id="page-button3" class="button button-positive  button-block">ප්‍රමුඛතා සංඥා</a>
-    <a ui-sref="page6" id="page-button4" class="button button-positive  button-block">විධාන සංඥා</a>
-    <a ui-sref="page7" id="page-button5" class="button button-positive  button-block">සිමාකාරී සංඥා</a>
-    <a ui-sref="page8" id="page-button8" class="button button-positive  button-block">අතිරේක පුවරැ</a>
-    <a ui-sref="page9" id="page-button9" class="button button-positive  button-block">මාර්ගය මත පිහිටුවන සලකුණු</a>
-    <a ui-sref="page10" id="page-button7" class="button button-positive  button-block">රියදුරන්හට ප්‍රයෝජනවත් අනෙකුත් සංඥා</a>
-  </ion-content>
+                                          <div  ng-repeat="sign in signs | filter : search "  div ng-show="search.length">
+                                               <div class="col col-25" >
+                                                        <img ng-src="{{sign.src}}" width="100%" />
+                                                        <p> {{sign.caption}} </p>
+                                               </div>
+                                          </div> 
+                      
+                                   <div ng-show="!search.length">
+
+                                        <a ui-sref="page2" id="page-button6" class="button button-positive  button-block">පොලිස් නිලධාරීන්ගේ හස්ත සංඥා</a>
+                                        <a ui-sref="page3" id="page-button1" class="button button-positive  button-block">අනතුරැ හැගවීමේ සංඥා</a>
+                                        <a ui-sref="page4" id="page-button2" class="button button-positive  button-block">තහනම් සංඥා</a>
+                                        <a ui-sref="page5" id="page-button3" class="button button-positive  button-block">ප්‍රමුඛතා සංඥා</a>
+                                        <a ui-sref="page6" id="page-button4" class="button button-positive  button-block">විධාන සංඥා</a>
+                                        <a ui-sref="page7" id="page-button5" class="button button-positive  button-block">සිමාකාරී සංඥා</a>
+                                        <a ui-sref="page8" id="page-button8" class="button button-positive  button-block">අතිරේක පුවරැ</a>
+                                        <a ui-sref="page9" id="page-button9" class="button button-positive  button-block">මාර්ගය මත පිහිටුවන සලකුණු</a>
+                                        <a ui-sref="page10" id="page-button7" class="button button-positive  button-block">රියදුරන්හට ප්‍රයෝජනවත් අනෙකුත් සංඥා</a>
+      
+                                    </div>
+   
+    </ion-content>
+
 </ion-view>
+
+

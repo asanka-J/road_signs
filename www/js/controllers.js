@@ -1,10 +1,25 @@
 angular.module('app.controllers', [])
   
-.controller('pageCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/gucaptione/controller
+.controller('pageCtrl',['$scope', '$stateParams','$firebaseArray', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/gucaptione/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+function ($scope, $stateParams,$firebaseArray)  {
 
+
+var ref = new Firebase('https://roadsigns-87517.firebaseio.com/');
+    var ref1 = new Firebase('https://roadsigns-87517.firebaseio.com/2');
+
+    $scope.signs = $firebaseArray(ref);
+  
+      
+    $scope.pageSigns = $firebaseArray(ref1);
+
+    
+    $scope.clear = function() {
+  
+$scope.search="";
+
+    } 
 
 }])
    
