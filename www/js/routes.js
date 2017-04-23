@@ -71,11 +71,6 @@ angular.module('app.routes', [])
   })
 
 
- .state('new', {
-    url: '/new',
-    templateUrl: 'templates/new.html',
-    controller: 'new'
-  })
 
 
 

@@ -14,7 +14,7 @@ function ($scope, $stateParams) {
 function ($scope, $stateParams,$firebaseArray) {
 
 var ref = new Firebase('https://roadsigns-87517.firebaseio.com/');
-    var ref1 = new Firebase('https://roadsigns-87517.firebaseio.com/10');
+    var ref1 = new Firebase('https://roadsigns-87517.firebaseio.com/2');
 
     $scope.signs = $firebaseArray(ref);
   
@@ -120,49 +120,45 @@ var ref = new Firebase('https://roadsigns-87517.firebaseio.com/');
 
 
 
-.controller("ExampleController", function($scope, $timeout, $ionicPopup,$firebaseArray) {
+// .controller("ExampleController", function($scope, $timeout, $ionicPopup,$firebaseArray) {
 
 
 
-     $scope.images = [];
+//      $scope.images = [];
 
-    $scope.loadImages = function() {
-        for(var i = 0; i < 1; i++) {
-            $scope.images.push({caption: "first", src:  "http://cf.mp-cdn.net/37/1a/7056657a120d473a051831e0a8ac-sometimes-yes-sometimes-no.png"});
-            $scope.images.push({caption: "second", src: "http://cf.mp-cdn.net/37/1a/7056657a120d473a051831e0a8ac-sometimes-yes-sometimes-no.png"});
-            $scope.images.push({caption: "third", src: "http://www.minoguesbeverage.com/wp-content/uploads/2013/10/Hobgoblin-100x100.jpg"});
-            $scope.images.push({caption: "4th", src: "http://www.minoguesbeverage.com/wp-content/uploads/2015/01/download-100x100.jpg"});
-            $scope.images.push({caption: "5th", src: "http://www.minoguesbeverage.com/wp-content/uploads/2015/01/download-100x100.jpg"});
-        }
-    }
+//     $scope.loadImages = function() {
+//         for(var i = 0; i < 1; i++) {
+//             $scope.images.push({caption: "first", src:  "http://cf.mp-cdn.net/37/1a/7056657a120d473a051831e0a8ac-sometimes-yes-sometimes-no.png"});
+//             $scope.images.push({caption: "second", src: "http://cf.mp-cdn.net/37/1a/7056657a120d473a051831e0a8ac-sometimes-yes-sometimes-no.png"});
+//             $scope.images.push({caption: "third", src: "http://www.minoguesbeverage.com/wp-content/uploads/2013/10/Hobgoblin-100x100.jpg"});
+//             $scope.images.push({caption: "4th", src: "http://www.minoguesbeverage.com/wp-content/uploads/2015/01/download-100x100.jpg"});
+//             $scope.images.push({caption: "5th", src: "http://www.minoguesbeverage.com/wp-content/uploads/2015/01/download-100x100.jpg"});
+//         }
+//     }
 
-      $scope.photoBrowser = photoBrowser;
+//       $scope.photoBrowser = photoBrowser;
 
-  function photoBrowser(index){
-    photoBrowserStandalone(index, $scope.images)
-  }
+//   function photoBrowser(index){
+//     photoBrowserStandalone(index, $scope.images)
+//   }
 
-  function photoBrowserStandalone(index, images){
-
+//   function photoBrowserStandalone(index, images){
     
-    var myApp = new Framework7({
-        init: false, //IMPORTANT - just do it, will write about why it needs to false later
-    });
-    var myPhotoBrowserStandalone = myApp.photoBrowser({
-        type: 'standalone',
-        theme: 'light',
-        photos : images,
-        initialSlide: index,
-        onClose: function(){
-          myApp = undefined;
-        }
-    });
-    myPhotoBrowserStandalone.open();
-  }
-
-
-
-})
+//     var myApp = new Framework7({
+//         init: false, //IMPORTANT - just do it, will write about why it needs to false later
+//     });
+//     var myPhotoBrowserStandalone = myApp.photoBrowser({
+//         type: 'standalone',
+//         theme: 'light',
+//         photos : images,
+//         initialSlide: index,
+//         onClose: function(){
+//           myApp = undefined;
+//         }
+//     });
+//     myPhotoBrowserStandalone.open();
+//   }
+// })
    
 
 .controller('page6Ctrl',['$scope', '$stateParams','$firebaseArray', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/gucaptione/controller
@@ -246,20 +242,4 @@ var ref = new Firebase('https://roadsigns-87517.firebaseio.com/');
 }])
 
 
-.controller('new', function($scope ,$ionicPopup,$firebaseArray,$timeout){
-
-	var ref = new Firebase('https://roadsigns-87517.firebaseio.com/');
-    var ref1 = new Firebase('https://roadsigns-87517.firebaseio.com/2');
-
-    $scope.signs = $firebaseArray(ref);
-  
-      
-    $scope.pageSigns = $firebaseArray(ref1); 
-
-        	
-
-
-	
-}
-)
 
