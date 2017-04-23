@@ -70,6 +70,7 @@ angular.module('app.routes', [])
     controller: 'page10Ctrl'
   })
 
+
  .state('new', {
     url: '/new',
     templateUrl: 'templates/new.html',

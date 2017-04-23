@@ -114,11 +114,15 @@ var ref = new Firebase('https://roadsigns-87517.firebaseio.com/');
     $scope.pageSigns = $firebaseArray(ref1); 
 
 
+
 }])
 
 
 
+
 .controller("ExampleController", function($scope, $timeout, $ionicPopup,$firebaseArray) {
+
+
 
      $scope.images = [];
 
@@ -160,6 +164,7 @@ var ref = new Firebase('https://roadsigns-87517.firebaseio.com/');
 
 })
    
+
 .controller('page6Ctrl',['$scope', '$stateParams','$firebaseArray', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/gucaptione/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -257,3 +262,4 @@ var ref = new Firebase('https://roadsigns-87517.firebaseio.com/');
 	
 }
 )
+
