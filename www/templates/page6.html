@@ -1,0 +1,34 @@
+<ion-view title="විධාන සංඥා" id="page6">
+    <ion-content padding="true" class="has-header" >
+ 
+                     <div class="list list-inset">
+                        <label class="item item-input">
+                            <i class="icon ion-search placeholder-icon"></i>
+                            <input type="text" name="search" ng-model="search"  placeholder="Search">
+                            <p></p>
+                        </label>
+                    </div> 
+
+
+                             <div  ng-repeat="sign in signs | filter : search "  div ng-show="search.length">
+                                              <div class="col col-25" >
+                                                        <img ng-src="{{sign.src}}" width="100%" />
+                                                        <p> {{sign.caption}} </p>
+                                               </div>
+                             </div> 
+                      
+                                   <div ng-show="!search.length">
+
+                                            <div class="row" style="flex-wrap: wrap">
+                                                <div class="col col-50" ng-repeat="number in pageSigns">
+                                                    <img ng-src="{{pageSigns[$index ].src}}" width="100%" />
+                                                    <p>{{pageSigns[$index].caption}}</p>
+                                                </div>
+                                           </div>
+                                    </div>
+                                                                            
+          
+
+       
+    </ion-content>
+</ion-view>
