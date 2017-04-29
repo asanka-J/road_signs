@@ -9,12 +9,6 @@
 angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'firebase','app.directives','app.services',])
 
 
-.config(function($ionicConfigProvider, $sceDelegateProvider){
-  
-
-  $sceDelegateProvider.resourceUrlWhitelist([ 'self','*://www.youtube.com/**', '*://player.vimeo.com/video/**']);
-
-})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -30,6 +24,27 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'firebase','app
     }
   });
 })
+
+
+
+
+//custom function to filter results
+.filter('unique', function() {
+   return function(collection, keyname) {
+      var output = [], 
+          keys = [];
+
+      angular.forEach(collection, function(item) {
+          var key = item[keyname];
+          if(keys.indexOf(key) === -1) {
+              keys.push(key);
+              output.push(item);
+          }
+      });
+      return output;
+   };
+})
+
 
 /*
   This directive is used to disable the "drag to open" functionality of the Side-Menu
