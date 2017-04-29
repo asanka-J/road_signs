@@ -69,11 +69,7 @@ angular.module('app.routes', [])
     templateUrl: 'templates/page10.html',
     controller: 'page10Ctrl'
   })
-  .state('test', {
-    url: '/test',
-    templateUrl: 'templates/test.html',
-    
-  })
+  
 
 
 
