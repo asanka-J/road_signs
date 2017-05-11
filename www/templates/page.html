@@ -21,16 +21,16 @@
                     </div> 
 
 
-
+ 
                                       
-                                          <div  ng-repeat="sign in signs  | filter: { 'සලකුණු' : select }   "  div ng-show="select">
+                                          <div  ng-repeat="sign in signs  | filter: { 'සලකුණු' : select }   "  div ng-show="select && !search.length">
                                             <div class="col col-25" >
                                                         <img ng-src="{{sign.src}}" width="200px" height="200px"/>
                                                         <p> {{sign.caption}} </p>
                                                </div>
                                           </div>
 
-                                            <div  ng-repeat="sign in signs   |filter: { caption: search }   "  div ng-show="search.length">
+                                            <div  ng-repeat="sign in signs   |filter: { caption: search } | filter: { 'සලකුණු' : select }   "  div ng-show="search.length">
                                                <div class="col col-25" >
                                                         <img ng-src="{{sign.src}}" width="200px" height="200px"/>
                                                         <p> {{sign.caption}} </p>
