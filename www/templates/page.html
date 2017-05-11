@@ -4,29 +4,40 @@
  
                      <div class="list list-inset">
                  
-                    <select name="select" ng-model="select">
-                        <option value ="1" selected>Default</option>
-                        <option value="2" >Green</option>
-                        <option value ="3">Red</option>
-                    </select>
+                      <select name="select" ng-model="select" Style="width:150px">
+                            <option value ="" selected>තෝරන්න </option>
+                            <option value ="බස්රථ">බස්රථ</option>
+                            <option value="පාපැදි" >පාපැදි</option>
+                            <option value ="පදිකයන්">පදිකයන්</option>
+                            <option value ="දුම්රිය">දුම්රිය</option>
+                         </select>
+
 
                         <label class="item item-input"> 
-                            <i class="icon ion-search placeholder-icon"></i>
+                          
                             <input type="text" name="search" ng-model="search"  placeholder="Search">
-                            <p></p>
+                            <i class="icon ion-search placeholder-icon"></i> <p></p>
                         </label>
                     </div> 
 
 
 
-                                          <div  ng-repeat="sign in signs |filter: { caption: search } |filter: { caption: 'වම් ' } "  div ng-show="search.length">
+                                      
+                                          <div  ng-repeat="sign in signs  | filter: { 'සලකුණු' : select }   "  div ng-show="select">
+                                            <div class="col col-25" >
+                                                        <img ng-src="{{sign.src}}" width="200px" height="200px"/>
+                                                        <p> {{sign.caption}} </p>
+                                               </div>
+                                          </div>
+
+                                            <div  ng-repeat="sign in signs   |filter: { caption: search }   "  div ng-show="search.length">
                                                <div class="col col-25" >
                                                         <img ng-src="{{sign.src}}" width="200px" height="200px"/>
                                                         <p> {{sign.caption}} </p>
                                                </div>
                                           </div> 
                       
-                                   <div ng-show="!search.length">
+                                   <div ng-show="!search.length && !select">
 
                                         <a ui-sref="page2" id="page-button6" class="button button-positive  button-block">පොලිස් නිලධාරීන්ගේ හස්ත සංඥා</a>
                                         <a ui-sref="page3" id="page-button1" class="button button-positive  button-block">අනතුරැ හැගවීමේ සංඥා</a>
